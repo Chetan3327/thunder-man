@@ -1,38 +1,112 @@
+body{
+  background-color: #fafafa;
+}
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.controls {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.upper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.upper select,
+.upper input[type="url"],
+.upper button {
+  margin: 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.upper select {
+  background-color: white;
+  cursor: pointer;
+}
+
+.upper input[type="url"] {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.upper button {
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.upper button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.upper button:hover {
+  background-color: #0056b3;
+}
+
+
+.controls textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+.dev {
+  padding-left: 26%;
+  text-align: left;
+  font-size: 14px;
+  font-style: italic;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.output {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.response {
+  margin-top: 10px;
+}
+
+pre {
+  text-align: left;
+  font-family: monospace;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.back-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: opacity 0.3s;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.back-to-top-button.visible {
+  opacity: 1;
+}
+img{
+  width: 60px;
+  margin-right: 10px;
 }
