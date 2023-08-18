@@ -93,6 +93,7 @@ pre {
   padding: 10px;
   border: 1px solid #ddd;
 }
+/* BackToTopButton.css */
 
 .back-to-top-button {
   position: fixed;
@@ -100,12 +101,35 @@ pre {
   right: 20px;
   transition: opacity 0.3s;
   opacity: 0;
+  cursor: pointer;
   z-index: 1000;
 }
 
 .back-to-top-button.visible {
   opacity: 1;
 }
+
+.up-button {
+  background-color: #202124;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  bottom: 50px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.up-button:hover {
+  background-color: #292b2e;
+}
+
 img{
   width: 60px;
   margin-right: 10px;

@@ -18,7 +18,7 @@ function App() {
   }
   const handelSubmit = () => {
     if(url === ''){
-      setResponse({"status": "ERROR","data": "url can't be empty"})
+      setResponse({"status": "ERROR", "data": "url can't be empty"})
       return
     }
     switch (method) {
@@ -26,22 +26,46 @@ function App() {
         axios.get(url, data).then((response) => {
           console.log(response)
           setResponse(response)
-        })
+        }).catch((error) => {
+            console.error('Error during GET request:', error);
+            setResponse({
+              status: 'ERROR',
+              data: error.message + ', Check console for more details',
+            });
+          });
         break;
       case 'POST':
         axios.post(url).then((response) => {
           setResponse(response)
-        })
+        }).catch((error) => {
+          console.error('Error during POSR request:', error);
+          setResponse({
+            status: 'ERROR',
+            data: error.message + ', Check console for more details',
+          });
+        });
         break;
       case 'PUT':
         axios.put(url, data).then((response) => {
           setResponse(response)
-        })
+        }).catch((error) => {
+          console.error('Error during PUT request:', error);
+          setResponse({
+            status: 'ERROR',
+            data: error.message + ', Check console for more details',
+          });
+        });
         break;
       case 'DELETE':
         axios.delete(url).then((response) => {
           setResponse(response)
-        })
+        }).catch((error) => {
+          console.error('Error during DELETE request:', error);
+          setResponse({
+            status: 'ERROR',
+            data: error.message + ', Check console for more details',
+          });
+        });
         break;
     
       default:
