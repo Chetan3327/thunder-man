@@ -5,6 +5,7 @@ import './Help.css'; // Import the stylesheet
 
   
 const Help = ({header, statement, code}) => {
+    const [copyButtonText, setCopyButtonText] = useState('Copy')
 
     const handleCopyClick = () => {
         const codeSnippet = code;
@@ -15,6 +16,10 @@ const Help = ({header, statement, code}) => {
         document.execCommand('copy');
         document.body.removeChild(textArea);
         console.log('Code snippet copied to clipboard.');
+        setCopyButtonText('Copied')
+        setTimeout(() => {
+            setCopyButtonText('Copy');
+        }, 2000);
     }
 
   return (
