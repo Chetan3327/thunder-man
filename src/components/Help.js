@@ -1,6 +1,6 @@
 // Help.js
 
-import React from 'react';
+import React, {useState} from 'react';
 import './Help.css'; // Import the stylesheet
 
   
@@ -16,10 +16,10 @@ const Help = ({header, statement, code}) => {
         document.execCommand('copy');
         document.body.removeChild(textArea);
         console.log('Code snippet copied to clipboard.');
-        setCopyButtonText('Copied')
+        setCopyButtonText('Copied!')
         setTimeout(() => {
             setCopyButtonText('Copy');
-        }, 2000);
+        }, 1000);
     }
 
   return (
@@ -40,7 +40,7 @@ const Help = ({header, statement, code}) => {
         </p>
         {code && (<div className="code-container">
             <pre className="help-code">
-                <button className="copy-button" onClick={handleCopyClick}>Copy</button>
+                <button className="copy-button" onClick={handleCopyClick}>{copyButtonText}</button>
                 {code}
             </pre>
         </div>)}
