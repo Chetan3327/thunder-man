@@ -9,8 +9,8 @@ const Main = () => {
             <NavBar />
             <Routes>
                 <Route path='/' element={<App />} />
-                <Route path='/help' element={<HelpPage />}></Route>
-                <Route path='*' element={<App />} ></Route>
+                <Route path='/help' element={<HelpPage />} />
+                <Route path='*' element={<App />}  />
             </Routes>
         </Router>
     )

@@ -35,7 +35,7 @@ function App() {
           });
         break;
       case 'POST':
-        axios.post(url).then((response) => {
+        axios.post(url, data).then((response) => {
           setResponse(response)
         }).catch((error) => {
           console.error('Error during POSR request:', error);
